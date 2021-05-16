@@ -17,7 +17,7 @@ def main():
 @click.option('--branch', default="master")
 @click.option('--language', default="english")
 def subjects(repo, branch, language):
-    """Returns subjects within a repo"""
+    """Find subjects within a repo"""
     repo = git.Repo(repo)
     commits = list(repo.iter_commits(branch))
     print(f"commit length: {len(commits)}")
@@ -38,7 +38,7 @@ def subjects(repo, branch, language):
 @click.option('--branch', default="master")
 @click.option('--subject', required=True)
 def experts(repo, branch, subject):
-    """Returns subjects within a repo"""
+    """Find experts of a given subject within a repo"""
     repo = git.Repo(repo)
     commits = list(repo.iter_commits(branch))
 
